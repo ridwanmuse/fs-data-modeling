@@ -1,0 +1,51 @@
+one-to-one
+
+user vs grocery_lists, assuming the user only create a general grocery lists and doesn't create several for different store. Then the user should only have 1 grocery list at a time. The grocery list should also belong to just 1 person who created it since everyone has different needs.
+
+
+
+
+one-to-many
+users vs recipes (user_id) because 1 user can have several recipes, but that specific recipe (id) is created by only 1 user.
+
+recipes vs users (recipe_id) : one recipe can be saved/ bookmark by different users
+
+
+
+many-to-many
+recipes vs grocery_lists because 1 recipe can have many ingredients. On the other hand, one ingredient can also be used to make several dishes, and people can buy 1 thing for different recipes.
+
+recipes vs occasions because 1 recipes can be used for different occasion, such as a cake can be used for birthday or graduation day... And 1 occasion may need more than 1 dishes, such as steaks, lobsters and burgers for a backyard bbq party.
+
+users vs occasions: 1 user can have many occasions saved. Each occasions can also be ceblerated by many users, ex: July 4th.
+
+
+
+Column
+    1. users => columns
+        user_id : need an id for each user
+        email: registration email
+        password: to log in
+
+    2. recipes => columns
+        recipe_id: unique id for each recipe - needs to seperate them
+        user_id: to link with the users
+        ingredients: the details of each recipes
+        instruction: instruction for that specific recipe
+        public: true/false to let other people view your recipe or not
+
+    3. grocery_lists => columns
+        list_id: grocery list id to differentiate with other lists
+        user_id: which user this list belongs to
+        ingredients: user added ingredients or ingredients from recipes.
+        meal_id: to link with the meals that user want to cook
+    
+    4. occasions => columns
+        user_id: which user choose this occasion
+        recipe_id: which recipe to use for this occasion
+        occasion_id: occasion id to make them unique
+
+    5. meals_list
+        user_id: which user created this meal list
+        recipe_id: which recipe this meals list need
+        meal_id: the unique id for this list

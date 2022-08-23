@@ -1,0 +1,33 @@
+create table users (
+	user_id SERIAL PRIMARY KEY,
+  email varchar(255),
+  password varchar(1000)
+);
+
+create table recipes (
+	recipe_id SERIAL PRIMARY KEY,
+  user_id int,
+  ingredients varchar(1000),
+  instructions varchar(5000),
+  public boolean
+);
+
+create table grocery_lists (
+	list_id SERIAL PRIMARY KEY,
+  user_id int,
+  ingredients varchar(1000),
+  meal_list int
+);
+
+create table occasions (
+	occasion_id SERIAL PRIMARY KEY,
+  user_id int,
+	recipe_id int
+);
+
+
+create table meals_list (
+	user_id int,
+	recipe_id int,
+  meal_id int
+);

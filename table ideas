@@ -1,0 +1,4 @@
+1. users - includes user_id, email, password
+2. recipes - inclused recipes_id, user_id, ingedients and instruction, public or private
+3. grocery_lists - includes ingedients
+4. occasions - user_id, recipes_id
